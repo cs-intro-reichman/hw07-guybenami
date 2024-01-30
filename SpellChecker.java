@@ -37,6 +37,7 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
+		word.toLowerCase();
 		String newWord = word;
 		int min = threshold + 1;
 		for(int i=0 ; i<dictionary.length ; i++)
