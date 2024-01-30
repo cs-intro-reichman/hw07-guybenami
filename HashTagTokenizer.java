@@ -34,20 +34,15 @@ public class HashTagTokenizer {
         if (hashtag.isEmpty()) {
             return;
         }
- 		hashtag.toLowerCase();
+ 		hashtag = hashtag.toLowerCase();
         int N = hashtag.length();
         for (int i = 1; i <=N && !hashtag.isEmpty(); i++) {
 			if(existInDictionary(hashtag.substring(0,i), dictionary)) {
-				System.out.println(hashtag.substring(0,i));
-				//System.out.println(i);
-				//if(!hashtag.isEmpty()) {	
-					hashtag = hashtag.substring(i);
-					breakHashTag(hashtag, dictionary);
-					break;
-
-				//}
+				System.out.println(hashtag.substring(0,i));	
+				hashtag = hashtag.substring(i);
+				breakHashTag(hashtag, dictionary);
+				break;
 			}
-			//N = hashtag.length();
         }
     }
 
